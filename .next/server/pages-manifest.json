@@ -1,6 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js"
-}
+{"/_document":"pages/_document.js","/_app":"pages/_app.js","/_error":"pages/_error.js","/about":"pages/about.html","/api/hello":"pages/api/hello.js","/blog":"pages/blog.html","/blog/[slug]":"pages/blog/[slug].html","/components/layout/Footer":"pages/components/layout/Footer.html","/components/MainLayout":"pages/components/MainLayout.html","/components/WeDo":"pages/components/WeDo.html","/components/layout/Header":"pages/components/layout/Header.html","/components/ui/Logo":"pages/components/ui/Logo.html","/components/SchemaMarkup":"pages/components/SchemaMarkup.html","/cozum-ortaklari":"pages/cozum-ortaklari.html","/cozumler":"pages/cozumler.html","/hizmetler":"pages/hizmetler.html","/components/PerformanceOptimizer":"pages/components/PerformanceOptimizer.html","/components/OptimizedImage":"pages/components/OptimizedImage.html","/home":"pages/home.html","/iletisim":"pages/iletisim.html","/sss":"pages/sss.html","/":"pages/index.html","/yazilimlar":"pages/yazilimlar.html","/404":"pages/404.html"}
