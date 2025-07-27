@@ -1,11 +1,11 @@
-name: Deploy to IHS Hosting
+name: Build and Prepare for IHS Hosting
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  build-and-prepare:
     runs-on: ubuntu-latest
     
     steps:
@@ -27,21 +27,14 @@ jobs:
     - name: Generate sitemap
       run: npm run postbuild
       
-    - name: Deploy to IHS Hosting via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Create deployment package
+      run: |
+        cd out
+        zip -r ../gitatech-deployment.zip .
+        cd ..
+        
+    - name: Upload deployment package
+      uses: actions/upload-artifact@v4
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./out/
-        server-dir: ./public_html/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.next/**
-          **/README.md
-          **/.env*
-          **/package*.json
-          **/yarn.lock
-          **/npm-debug.log* 
+        name: deployment-package
+        path: gitatech-deployment.zip 
